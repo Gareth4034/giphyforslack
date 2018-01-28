@@ -10,8 +10,8 @@ deploy:
     secret_access_key:
       secure: $AWS_SECRET_ACCESS_KEY
     region: "eu-west-2"
-    app: "My First Elastic Beanstalk Application"
-    env: "TestApplication-env"
+    app: "Giphyforslack-env"
+    env: "Giphyforslack-env"
     bucket_name: "elasticbeanstalk-eu-west-2-814741261052"
     on:
       branch: master
