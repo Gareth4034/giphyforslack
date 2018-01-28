@@ -3,7 +3,7 @@ before_install: "cp .travis.settings.xml $HOME/.m2/settings.xml"
 script: mvn clean package
 
 deploy:
-  - provider: elasticbeanstalk
+    provider: elasticbeanstalk
     skip_cleanup: true
     zip_file: 'giphyForSlack-1.0-SNAPSHOT-assembly.zip'
     access_key_id: $AWS_ACCESS_KEY_ID
