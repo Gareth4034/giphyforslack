@@ -1,0 +1,32 @@
+# Change default server ports
+  server:
+    type: simple
+    applicationContextPath: /
+    adminContextPath: /admin
+    connector:
+      type: http
+      port: 8080
+
+  logging:
+
+      # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+    level: INFO
+
+    loggers:
+      io.dropwizard: INFO
+
+    appenders:
+      - type: console
+        threshold: INFO
+        timeZone: UTC
+        target: stdout
+        logFormat: "%-5level %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n"
+      - type: file
+        threshold: INFO
+        logFormat: "%-5level %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n"
+        currentLogFilename: ./logs/giphyForSlack.log
+        archive: true
+        archivedLogFilenamePattern: ./log/giphyForSlack-%d{yyyy-MM-dd}-%i.log
+        archivedFileCount: 7
+        timeZone: UTC
+        maxFileSize: 10MB

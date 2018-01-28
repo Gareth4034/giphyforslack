@@ -1,0 +1,5 @@
+App.class
+Resources/GiphyForSlackResource.class
+GiphyForSlackConfiguration.class
+Model/GiphyObject.class
+lancaster/apps/giphyForSlack/GiphyAccess.class
