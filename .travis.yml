@@ -1,0 +1,17 @@
+language: java
+before_install: "cp .travis.settings.xml $HOME/.m2/settings.xml"
+script: mvn clean package
+
+deploy:
+  - provider: elasticbeanstalk
+    skip_cleanup: true
+    zip_file: 'giphyForSlack-1.0-SNAPSHOT-assembly.zip'
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key:
+      secure: $AWS_SECRET_ACCESS_KEY
+    region: "eu-west-2"
+    app: "My First Elastic Beanstalk Application"
+    env: "TestApplication-env"
+    bucket_name: "elasticbeanstalk-us-east-2-814741261052"
+    on:
+      branch: master
