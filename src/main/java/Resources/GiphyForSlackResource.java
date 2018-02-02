@@ -2,6 +2,7 @@ package Resources;
 
 import com.codahale.metrics.annotation.Timed;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -20,7 +21,7 @@ public class GiphyForSlackResource {
         return new GiphyAccess().getTrending();
     }
 
-    @GET
+    @POST
     @Path("/search")
     @Timed
     public String getTrending(@QueryParam("query") String query) throws
