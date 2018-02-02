@@ -6,6 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import jdk.nashorn.internal.parser.JSONParser;
 import org.json.simple.JSONObject;
 
 @Path("/gifs")
@@ -49,7 +50,9 @@ public class GiphyForSlackResource {
                 "            \"footer_icon\": \"https://platform.slack-edge.com/img/default_application_icon.png\",\n" +
                 "            \"ts\": 123456789\n" +
                 "        }\n" +
-                "    ]";
+                "    ]\n" +
+                "}";
+
 
         return response;
     }
